@@ -6,7 +6,7 @@ if(isset($_GET['login'])) {
     $username = $_POST['username'];
     $passwort = $_POST['passwort'];
     
-    $statement = $pdo->prepare('SELECT * FROM USERS WHERE user_name = "'.$username.'"');
+    $statement = $pdo->prepare("SELECT * FROM USERS WHERE user_name = :username");
     $result = $statement->execute(array('username' => $username));
     $user = $statement->fetch();
 
@@ -36,7 +36,7 @@ if(isset($errorMessage)) {
 ?>
  
 <form action="?login=1" method="post">
-E-Mail:<br>
+Benutzername:<br>
 <input type="username" size="40" maxlength="250" name="username"><br><br>
  
 Dein Passwort:<br>
