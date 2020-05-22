@@ -13,7 +13,14 @@ if(isset($_GET['login'])) {
     //Überprüfung des Passworts
     if ($user !== false && $user['user_pw'] == $passwort) {
         $_SESSION['userid'] = $user['user_id'];
+
+        $statement = $pdo->prepare("Update USERS SET last_login=Now() WHERE user_id=:userID");
+        $result = $statement->execute(array('userID' => $user['user_id']));
+
+        print($result);
+
         die('Login erfolgreich. Weiter zu <a href="geheim.php">internen Bereich</a>');
+
     } else {
         $errorMessage = "E-Mail oder Passwort war ungültig<br>";
     }
