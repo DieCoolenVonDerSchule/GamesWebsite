@@ -13,32 +13,22 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Games Website</a>
+    <a class="navbar-brand" href="index.php">Games Website</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="howto.html">Favoritenliste</a>
+          <a class="nav-link" href="#">Favoritenliste</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <a href="../login.php" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true">Login</a>
+        <a href="register.php" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true">Register</a>
+      </form>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="login.php" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true">Login</a>
       </form>
     </div>
     </nav>
-
-    <h2> Liste mit allen Spielen </h2>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="javascripts/bootstrap.min.js" </script>
-  </body>
-</html>
