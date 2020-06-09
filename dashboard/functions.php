@@ -14,7 +14,7 @@ $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb)
 
 function getAllGames(){
   $con = getConnection();
-  $sql = 'SELECT * FROM games';
+  $sql = 'SELECT games.name as gamesname, genre_name, publishers.name as publishersname, developers.name as developersname, release_date FROM games  JOIN developers using (dev_id) Join publishers using (pub_id) Join genres using (genre_id)';
   // SELECT games.name as gamesname, genres.name as genrename, publishers.name as publishersname, developers.name as developersname, release_date FROM games  JOIN developers using (dev_id) Join publishers using (pub_id) Join genres using (genre_id);
   $query = mysqli_query($con,$sql);
   return $query;
