@@ -22,7 +22,7 @@ if(isset($_GET['login'])) {
         die('Login erfolgreich. Weiter zu <a href="geheim.php">internen Bereich</a>');
 
     } else {
-        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+        $errorMessage = "Nutzername oder Passwort war ungültig<br>";
     }
     
 }
