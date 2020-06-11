@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
 
     <title>Games Website</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+	
   </head>
   <body>
     <!-- Navbar -->
