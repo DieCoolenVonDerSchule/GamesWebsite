@@ -33,7 +33,7 @@ while ($data = mysqli_fetch_array($query)) { ?>
             <td><?php echo $data['release_date']; ?></td>
 			<td><?php echo $data['userpoints']; ?></td>
             <td class="btn-group">
-                  <a type="button" class="btn btn-sm btn-outline-secondary" href="checkout.php?id=<?php echo $data['pid']; ?>">Aus Favoriten entfernen</a>
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="deleteGame.php?id=<?php echo $data['game_id']; ?>">Aus Favoriten entfernen</a>
             </td>
           </tr>
       <?php } ?>

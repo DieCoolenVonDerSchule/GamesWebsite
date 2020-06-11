@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
 
-    <title>Hello, world!</title>
+    <title>Games Website</title>
   </head>
   <body>
     <!-- Navbar -->
