@@ -1,5 +1,11 @@
 <?php
- include_once ('header.php');
+  session_start();
+  if(isset($_SESSION['userid'])){
+    include_once ('header_loggedIn.php');
+  } else {
+    include_once ('header.php');
+  }
+
  include_once('functions.php');
 ?>
 
@@ -17,7 +23,7 @@
 	<td>User Points</td>
   </tr>
   </thead>
-  
+
     <tbody>
 <?php
 $query = getFavouriteGames();

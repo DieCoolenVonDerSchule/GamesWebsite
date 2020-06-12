@@ -17,11 +17,10 @@ if(isset($_GET['login'])) {
         $_SESSION['userid'] = $user['user_id'];
 
         $statement = $pdo->prepare("Update USERS SET last_login=Now() WHERE user_id=:userID");
-        $result = $statement->execute(array('userID' => $user['user_id']));
+        $statement->execute(array('userID' => $user['user_id']));
 
-        print($result);
-
-        die('Login erfolgreich. Weiter zu <a href="index.php">internen Bereich</a>');
+        header('location: index.php');
+        exit;
 
     } else {
         $errorMessage = "Nutzername oder Passwort war ungültig<br>";

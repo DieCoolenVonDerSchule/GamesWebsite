@@ -1,5 +1,11 @@
 <?php
- include_once ('header.php');
+session_start();
+if(isset($_SESSION['userid'])){
+  include_once ('header_loggedIn.php');
+} else {
+  include_once ('header.php');
+}
+
  include_once('functions.php');
 ?>
 
@@ -14,13 +20,13 @@
     <td>Developer</td>
     <td>Publisher</td>
     <td>Release Date</td>
+    <td>User Points</td>
     <td>Zu Favoriten hinzufügen</td>
   </tr>
   </thead>
 
   <tbody>
 <?php
-session_start();
 $query = getAllGames();
 
 while ($data = mysqli_fetch_array($query)) { ?>
@@ -31,6 +37,7 @@ while ($data = mysqli_fetch_array($query)) { ?>
             <td><?php echo $data['developersname']; ?></td>
             <td><?php echo $data['publishersname']; ?></td>
             <td><?php echo $data['release_date']; ?></td>
+            <td><?php echo $data['userpoints']; ?></td>
 
             <td class="btn-group">
                 <a type="button" class="btn btn-sm btn-outline-secondary" href="addGame.php?id=<?php echo $data['game_id']; ?>">Add</a>

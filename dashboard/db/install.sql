@@ -169,6 +169,21 @@ END //
 DELIMITER ;
 
 
+-- Trigger für delete
+DROP TRIGGER IF EXISTS trg_userpoints_delete_all;
+DELIMITER //
+
+CREATE  TRIGGER trg_userpoints_delete_all
+BEFORE DELETE ON USERS
+FOR EACH ROW
+BEGIN
+
+    DELETE FROM USERS_GAMES WHERE (user_id=OLD.user_id);
+
+END //
+DELIMITER ;
+
+
 -- Trigger für sales
 DROP TRIGGER IF EXISTS trg_sales;
 DELIMITER //
