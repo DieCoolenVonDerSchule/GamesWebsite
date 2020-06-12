@@ -21,7 +21,12 @@ if(isset($_SESSION['userid'])){
     <td>Publisher</td>
     <td>Release Date</td>
     <td>User Points</td>
-    <td>Zu Favoriten hinzufügen</td>
+    <?php
+    if(isset($_SESSION['userid'])) {
+      echo '<td>Zu Favoriten hinzufügen</td>';
+    }
+    ?>
+
   </tr>
   </thead>
 
@@ -39,9 +44,14 @@ while ($data = mysqli_fetch_array($query)) { ?>
             <td><?php echo $data['release_date']; ?></td>
             <td><?php echo $data['userpoints']; ?></td>
 
-            <td class="btn-group">
-                <a type="button" class="btn btn-sm btn-outline-secondary" href="addGame.php?id=<?php echo $data['game_id']; ?>">Add</a>
-            </td>
+            <?php
+            if(isset($_SESSION['userid'])) {
+              echo '<td class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="addGame.php?id='.$data['game_id'].'">Add</a>
+              </td>';
+            }
+             ?>
+
           </tr>
       <?php } ?>
       </tbody>

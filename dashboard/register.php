@@ -41,13 +41,13 @@ if(isset($_GET['register'])) {
 
     //Keine Fehler, wir können den Nutzer registrieren
     if(!$error) {
-        $statement = $pdo->prepare("INSERT INTO USERS (user_name, user_pw, user_type) VALUES (:username, :passwort, :type)");
+        $statement = $pdo->prepare("INSERT INTO USERS (user_name, user_pw, user_type, last_login) VALUES (:username, :passwort, :type, now())");
         $result = $statement->execute(array('username' => $username, 'passwort' => $passwort, 'type' => "Member"));
 
         if($result) {
             header('location: login.php');
             $showFormular = false;
-            exit;
+
         } else {
             echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
         }
